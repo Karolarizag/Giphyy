@@ -1,0 +1,12 @@
+.Gif {
+  border: 1px solid white;
+  padding: 5px;
+  margin: 5px;
+  width: min-content;
+  display: inline-grid;
+
+}
+
+.AnimeTitle {
+  font-size: 15px;
+}
