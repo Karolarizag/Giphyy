@@ -9,13 +9,14 @@ export default function SearchResults ({ params }) {
 
   // Custom hook
   const { loading, gifs } = useGif({ keyword })
+  const title = keyword.split('%20').join(' ')
 
   return <>
   
       {
         loading 
         ? <Spinner />
-        : <ListOfGifs gifs={gifs} className='Result' /> 
+        : <ListOfGifs title={title} gifs={gifs} /> 
       }
   </>
 
