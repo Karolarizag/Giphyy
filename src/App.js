@@ -1,8 +1,8 @@
 import React from 'react'
-import './App.css';
 import {Link, Route} from 'wouter'
-import SearchResults from './pages/searchResults/index'
+import './App.css';
 import Home from './pages/home/index'
+import SearchResults from './pages/searchResults/index'
 import Detail from './pages/detail/index'
 
 function App() {
@@ -22,6 +22,6 @@ function App() {
   );
 }
 
-// Creando custon hooks y usando Context 1.10'
-
 export default App;
+
+// Creando custom hooks y usando context 50min

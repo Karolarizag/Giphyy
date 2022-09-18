@@ -4,7 +4,7 @@ import './Home.css'
 import ListOfGifs from '../../components/ListOfGifs/ListOfGifs'
 import { useGif } from '../../hooks/useGif'
 
-const buscado = ['One piece', 'Naruto', 'Kimetsu no yaiba', 'Jujutsu kaisen', 'Wakimi no uso', 'Pokemon']
+const popularGifs = ['One piece', 'Naruto', 'Kimetsu no yaiba', 'Jujutsu kaisen', 'Wakimi no uso', 'Pokemon']
 
 export default function Home () {
   const [keyword, setKeyword] = useState('')
@@ -34,7 +34,7 @@ export default function Home () {
           <ListOfGifs gifs={gifs}/>
           <h3>Los gifs más populares:</h3>
           <ul>
-            {buscado.map((anime) => (
+            {popularGifs.map((anime) => (
               <li key={anime.split(' ').join('+')}>
                 <Link to={`/search/${anime}`} className="Link">{anime} </Link>
               </li>

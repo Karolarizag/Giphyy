@@ -7,7 +7,7 @@ export default function Gif ( {title, id, url} ) {
     <div className='Gif'>
       <Link to={`/gif/${id}`} className="Link">
         <h3 className='AnimeTitle' > {title} </h3>
-        <img alt={title} src={url} className="AnimeImg" />
+        <img loading='lazy' alt={title} src={url} className="AnimeImg" />
       </Link>
     </div>
   )

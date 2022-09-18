@@ -9,7 +9,7 @@ export function useGif ({keyword} = {keyword : null}) {
 
     setLoading(true)
     
-    const keywordToUse = keyword || localStorage.getItem('lastKeyword')
+    const keywordToUse = keyword || localStorage.getItem('lastKeyword') || 'welcome'
 
     getGifs({keyword : keywordToUse})
     
