@@ -23,16 +23,16 @@ export default function Home () {
 
   return (
     (
-      <div className='text-center'>
+      <div class='text-center'>
 
-        <form onSubmit={handleSubmit} className='my-10'>
+        <form onSubmit={handleSubmit} class='my-10'>
           <input 
-          className="input input-bordered input-primary w-full max-w-xs" 
+          class="input input-bordered input-primary w-full max-w-xs" 
           placeholder="Text your search here!"
           type="text" 
           onChange={handleChange} 
           value={keyword} />
-          <button className="btn btn-ghost">Buscar</button>
+          <button class="btn btn-ghost">Buscar</button>
         </form>
 
         <h3>Última búsqueda:</h3>

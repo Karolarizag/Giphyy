@@ -8,7 +8,7 @@ export default function ListOfGifs ({gifs, title}) {
 
     <h3>{title}</h3>
 
-    <div className='ListOfGifs'>
+    <div class='ListOfGifs'>
       {
         
         gifs.map(({id, title, url}) => 
