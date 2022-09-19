@@ -8,8 +8,9 @@ const popularGifs = ['One piece', 'Naruto', 'Kimetsu no yaiba', 'Jujutsu kaisen'
 export default function Home () {
   const [keyword, setKeyword] = useState('')
   const [path, pushLocation] = useLocation()
+  console.log(path)
 
-  const {loading, gifs} = useGif()
+  const {gifs} = useGif()
   
   const handleSubmit = evt => {
     evt.preventDefault()
