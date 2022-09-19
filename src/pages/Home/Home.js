@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ListOfGifs from '../../components/ListOfGifs/ListOfGifs';
 import { Link, useLocation } from 'wouter';
-import { useGif } from '../../hooks/useGif';
+import { useGif } from '../../Hooks/useGif';
 
 const popularGifs = ['One piece', 'Naruto', 'Kimetsu no yaiba', 'Jujutsu kaisen', 'Wakimi no uso', 'Pokemon'];
 

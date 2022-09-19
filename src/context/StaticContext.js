@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Context = React.createContext({
+const StaticContext = React.createContext({
   name: 'karolg',
   phrase: 'heloou hellou hellou'
 })
 
-export default Context
+export default StaticContext
