@@ -3,7 +3,7 @@ import ListOfGifs from '../../components/ListOfGifs/ListOfGifs';
 import { Link, useLocation } from 'wouter';
 import { useGif } from '../../hooks/useGif';
 
-const popularGifs = ['One piece', 'Naruto', 'Kimetsu no yaiba', 'Jujutsu kaisen', 'Wakimi no uso', 'Pokemon'];
+const popularGifs = ['Shingeki no Kyojin', 'Boku no Hero Academia', 'Kimetsu no yaiba', 'Jujutsu kaisen', 'JoJo\'s Bizarre Adventure', 'Dr. Stone', 'One-Punch Man', 'One piece', 'Tokyo Revengers', 'Hunter x Hunter', 'Naruto'];
 
 export default function Home () {
   const [keyword, setKeyword] = useState('')
@@ -40,11 +40,13 @@ export default function Home () {
 
         <ListOfGifs gifs={gifs}/>
 
-        <h3>Los gifs más populares:</h3>
+        <h3>Los animes más populares:</h3>
         <ul>
           {popularGifs.map((anime) => (
             <li key={anime.split(' ').join('+')}>
-              <Link to={`/search/${anime}`}> {anime} </Link>
+              <Link to={`/search/${anime}`}> 
+                <p class="my-2"> {anime} </p> 
+              </Link>
             </li>
           ))}
         </ul>
