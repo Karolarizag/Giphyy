@@ -45,4 +45,4 @@ function App() {
 
 export default App;
 
-// Creando custom hooks y usando context 50min
+// Lazy load, suspense y paginación min 39

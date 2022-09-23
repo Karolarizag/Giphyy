@@ -1,7 +1,7 @@
 import React from 'react'
-import Spinner from '../../components/Spinner/Spinner.js'
-import ListOfGifs from '../../components/ListOfGifs/ListOfGifs'
-import { useGif } from '../../hooks/useGif'
+import Spinner from 'components/Spinner/Spinner.js'
+import ListOfGifs from 'components/ListOfGifs/ListOfGifs'
+import { useGif } from 'hooks/useGif'
 
 export default function SearchResults ({ params }) {
 
@@ -9,14 +9,13 @@ export default function SearchResults ({ params }) {
 
   // Custom hook
   const { loading, gifs } = useGif({ keyword })
-  const title = keyword.split('%20').join(' ')
 
   return <>
   
       {
         loading 
         ? <Spinner />
-        : <ListOfGifs title={title} gifs={gifs} /> 
+        : <ListOfGifs title={decodeURI(keyword)} gifs={gifs} /> 
       }
   </>
 

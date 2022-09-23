@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import ListOfGifs from '../../components/ListOfGifs/ListOfGifs';
-import { Link, useLocation } from 'wouter';
-import { useGif } from '../../hooks/useGif';
-
-const popularGifs = ['Shingeki no Kyojin', 'Boku no Hero Academia', 'Kimetsu no yaiba', 'Jujutsu kaisen', 'JoJo\'s Bizarre Adventure', 'Dr. Stone', 'One-Punch Man', 'One piece', 'Tokyo Revengers', 'Hunter x Hunter', 'Naruto'];
+import ListOfGifs from 'components/ListOfGifs/ListOfGifs';
+import { useLocation } from 'wouter';
+import { useGif } from 'hooks/useGif';
+import Category from 'components/Category/Category';
+import TrendingSearches from 'components/TrendingSearches/TrendingSearches';
 
 export default function Home () {
   const [keyword, setKeyword] = useState('')
@@ -24,34 +24,46 @@ export default function Home () {
 
   return (
     (
+      <>
       <div class='text-center'>
 
-        <form onSubmit={handleSubmit} class='my-10'>
-          <input 
-          class="input input-bordered input-primary w-full max-w-xs" 
-          placeholder="Text your search here!"
-          type="text" 
-          onChange={handleChange} 
-          value={keyword} />
-          <button class="btn btn-ghost">Buscar</button>
+        <form onSubmit={handleSubmit} class='my-10 form-control'>
+          <div class="input-group flex justify-center">
+            <input 
+            class="input input-bordered input-primary w-full max-w-xs input-group" 
+            placeholder="Text your search here!"
+            type="text" 
+            onChange={handleChange} 
+            value={keyword} />
+            <button class="btn btn-primary">Buscar</button>
+          </div>
         </form>
-
-        <h3>Última búsqueda:</h3>
-
-        <ListOfGifs gifs={gifs}/>
-
-        <h3>Los animes más populares:</h3>
-        <ul>
-          {popularGifs.map((anime) => (
-            <li key={anime.split(' ').join('+')}>
-              <Link to={`/search/${anime}`}> 
-                <p class="my-2"> {anime} </p> 
-              </Link>
-            </li>
-          ))}
-        </ul>
-
+        
       </div>
+
+       <div className="App-wrapper">
+        <div className="App-main">
+          <div className="App-results">
+            <h3 className="App-title">Última búsqueda</h3>
+            <ListOfGifs gifs={gifs} />
+          </div>
+          <div className="App-category">
+            <TrendingSearches />
+
+          <Category 
+            name="Fav Series"
+            options={["Friends", "Big bang theory", "Anne with an E", "Game of Thrones", "Bridgerton"]}
+            />        
+
+          <Category 
+            name="Fav movies"
+            options={["Harry Potter", "Tangled", "Pride and prejudice", "Shrek"]}
+            />
+          </div>
+        </div>
+      </div>
+
+      </>
     )
   )
 }
